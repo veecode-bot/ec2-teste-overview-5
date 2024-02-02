@@ -1,0 +1,17 @@
+apiVersion: veecode.backstage.io/v1alpha1
+kind: Cluster
+metadata:
+  name: "ec2-teste-overview-5"
+  environment:
+    cluster_type: ec2
+  annotations:
+    github.com/project-slug: veecode-bot/ec2-teste-overview-5
+    backstage.io/techdocs-ref: dir:.
+    github.com/workflows: terraform-deploy.yml,start_instance.yml,stop_instance.yml,terraform-destroy.yml,deploy_dashboard
+    grafana/tag-selector: ec2-teste-overview-5
+    grafana/alert-label-selector: "alertname=ec2-teste-overview-5"
+spec:
+  type: devops
+  lifecycle: experimental
+  owner: "group:default/admin"
+  
